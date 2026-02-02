@@ -1,0 +1,32 @@
+{
+  "base_url": "https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/",
+  "ultimos_3_trimestres": [
+    {
+      "ano": 2025,
+      "trimestre": 1,
+      "rotulo": "1T2025",
+      "zip_urls": [
+        "https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/2025/1T2025.zip"
+      ]
+    },
+    {
+      "ano": 2025,
+      "trimestre": 2,
+      "rotulo": "2T2025",
+      "zip_urls": [
+        "https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/2025/2T2025.zip"
+      ]
+    },
+    {
+      "ano": 2025,
+      "trimestre": 3,
+      "rotulo": "3T2025",
+      "zip_urls": [
+        "https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/2025/3T2025.zip"
+      ]
+    }
+  ],
+  "arquivos_ignorados": [
+    "https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/2017/3-Trimestre.zip"
+  ]
+}

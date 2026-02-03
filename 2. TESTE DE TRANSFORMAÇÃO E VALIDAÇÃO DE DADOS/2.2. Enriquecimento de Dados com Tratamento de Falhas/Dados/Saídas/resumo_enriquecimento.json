@@ -1,0 +1,11 @@
+{
+  "total_registros": 2065,
+  "registros_enriquecidos": 2065,
+  "registros_sem_match": 0,
+  "cnpjs_divergentes_cadastro": 0,
+  "arquivos_gerados": {
+    "enriquecido": "enriquecido.csv",
+    "sem_match": "sem_match.csv",
+    "duplicados": "cadastro_duplicados.csv"
+  }
+}

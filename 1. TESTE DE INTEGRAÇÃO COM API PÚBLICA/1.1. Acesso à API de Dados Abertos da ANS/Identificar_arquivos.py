@@ -96,10 +96,7 @@ def listar_itens(url_dir: str) -> Tuple[List[str], List[str]]:
 
 
 def extrai_trimestre(nome_zip: str, ano_contexto: Optional[int] = None) -> Optional[TrimestreRef]:
-    """
-    Extrai (ano, trimestre) do nome do ZIP.
-    Se o nome não tiver ano, tenta usar ano_contexto (pasta YYYY/).
-    """
+    """ Extrai (ano, trimestre) do nome do ZIP. Se o nome não tiver ano, tenta usar ano_contexto (pasta YYYY/). """
     nome = Path(nome_zip).name
 
     # 1) padrões com ano no nome

@@ -1,0 +1,68 @@
+tipo;chave;detalhe
+reg_ans_sem_cadop;REG_ANS=000477;fonte=despesas_eventos_sinistros_1T2025.csv
+reg_ans_sem_cadop;REG_ANS=321338;fonte=despesas_eventos_sinistros_1T2025.csv
+reg_ans_sem_cadop;REG_ANS=345741;fonte=despesas_eventos_sinistros_1T2025.csv
+reg_ans_sem_cadop;REG_ANS=346870;fonte=despesas_eventos_sinistros_1T2025.csv
+reg_ans_sem_cadop;REG_ANS=349534;fonte=despesas_eventos_sinistros_1T2025.csv
+reg_ans_sem_cadop;REG_ANS=350141;fonte=despesas_eventos_sinistros_1T2025.csv
+reg_ans_sem_cadop;REG_ANS=351792;fonte=despesas_eventos_sinistros_1T2025.csv
+reg_ans_sem_cadop;REG_ANS=418161;fonte=despesas_eventos_sinistros_1T2025.csv
+reg_ans_sem_cadop;REG_ANS=423742;fonte=despesas_eventos_sinistros_1T2025.csv
+reg_ans_sem_cadop;REG_ANS=321338;fonte=despesas_eventos_sinistros_2T2025.csv
+reg_ans_sem_cadop;REG_ANS=345741;fonte=despesas_eventos_sinistros_2T2025.csv
+reg_ans_sem_cadop;REG_ANS=349534;fonte=despesas_eventos_sinistros_2T2025.csv
+reg_ans_sem_cadop;REG_ANS=350141;fonte=despesas_eventos_sinistros_2T2025.csv
+reg_ans_sem_cadop;REG_ANS=351792;fonte=despesas_eventos_sinistros_2T2025.csv
+reg_ans_sem_cadop;REG_ANS=321338;fonte=despesas_eventos_sinistros_3T2025.csv
+reg_ans_sem_cadop;REG_ANS=345741;fonte=despesas_eventos_sinistros_3T2025.csv
+reg_ans_sem_cadop;REG_ANS=350141;fonte=despesas_eventos_sinistros_3T2025.csv
+valor_zero_ou_negativo;CNPJ=57746455000178 REG_ANS=333689;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=01773319000112 REG_ANS=334511;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=12317012000123 REG_ANS=393533;tri=1T ano=2025 valor=-1866670.71
+valor_zero_ou_negativo;CNPJ=11158465000191 REG_ANS=417424;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=10846369000173 REG_ANS=417611;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=nan REG_ANS=418161;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=12838821000180 REG_ANS=418285;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=18275071000162 REG_ANS=419133;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=19240452000179 REG_ANS=419257;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=14927215000167 REG_ANS=419354;tri=1T ano=2025 valor=-45917.06
+valor_zero_ou_negativo;CNPJ=19663787000108 REG_ANS=419567;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=28311619000136 REG_ANS=421146;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=15011651000154 REG_ANS=421715;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=33922160000147 REG_ANS=422053;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=34608096000197 REG_ANS=422134;tri=1T ano=2025 valor=-406662.69
+valor_zero_ou_negativo;CNPJ=34673588000166 REG_ANS=422401;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=37442364000131 REG_ANS=422576;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=40246859000108 REG_ANS=422754;tri=1T ano=2025 valor=-56030.71
+valor_zero_ou_negativo;CNPJ=41715325000138 REG_ANS=422941;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=42209475000132 REG_ANS=423017;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=nan REG_ANS=423742;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=43047552000168 REG_ANS=423858;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=03284505000113 REG_ANS=424129;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=54698763000187 REG_ANS=424145;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=49168700000189 REG_ANS=424161;tri=1T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=57746455000178 REG_ANS=333689;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=01773319000112 REG_ANS=334511;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=12317012000123 REG_ANS=393533;tri=2T ano=2025 valor=-3010085.96
+valor_zero_ou_negativo;CNPJ=02009924000184 REG_ANS=407011;tri=2T ano=2025 valor=-548489.69
+valor_zero_ou_negativo;CNPJ=11158465000191 REG_ANS=417424;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=12838821000180 REG_ANS=418285;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=18275071000162 REG_ANS=419133;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=19240452000179 REG_ANS=419257;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=14927215000167 REG_ANS=419354;tri=2T ano=2025 valor=-346108.05
+valor_zero_ou_negativo;CNPJ=19663787000108 REG_ANS=419567;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=22694698000125 REG_ANS=420841;tri=2T ano=2025 valor=-50054.84
+valor_zero_ou_negativo;CNPJ=28311619000136 REG_ANS=421146;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=28310835000167 REG_ANS=421367;tri=2T ano=2025 valor=-9276.08
+valor_zero_ou_negativo;CNPJ=15011651000154 REG_ANS=421715;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=34608096000197 REG_ANS=422134;tri=2T ano=2025 valor=-1369946.88
+valor_zero_ou_negativo;CNPJ=34673588000166 REG_ANS=422401;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=37442364000131 REG_ANS=422576;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=42209475000132 REG_ANS=423017;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=43047552000168 REG_ANS=423858;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=03284505000113 REG_ANS=424129;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=54698763000187 REG_ANS=424145;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=49168700000189 REG_ANS=424161;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=58434577000191 REG_ANS=424544;tri=2T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=57746455000178 REG_ANS=333689;tri=3T ano=2025 valor=0
+valor_zero_ou_negativo;CNPJ=01773319000112 REG_ANS=334511;tri=3T ano=2025 valor=0

@@ -61,7 +61,7 @@ def normalizar_texto(s: str) -> str:
     return (s or "").strip().upper()
 
 
-def parse_decimal_any(v: object) -> Optional[Decimal]:
+def extrair_decimal(v: object) -> Optional[Decimal]:
     if v is None:
         return None
     if isinstance(v, Decimal):
@@ -83,7 +83,7 @@ def parse_decimal_any(v: object) -> Optional[Decimal]:
         return None
 
 
-def format_money_br(v: Decimal) -> str:
+def formato_dinheiro(v: Decimal) -> str:
     v = v.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
     s = f"{v:,.2f}"
     return s.replace(",", "X").replace(".", ",").replace("X", ".")
@@ -188,7 +188,7 @@ def ler_intermediario(p: Path) -> pd.DataFrame:
     if "ValorDespesas" not in df.columns:
         raise RuntimeError(f"{p.name} não tem coluna ValorDespesas.")
 
-    df["ValorDec"] = df["ValorDespesas"].map(parse_decimal_any)
+    df["ValorDec"] = df["ValorDespesas"].map(extrair_decimal)
     return df
 
 
@@ -305,7 +305,7 @@ def main() -> None:
     # Métricas
     total = sum((Decimal(v) for v in final["ValorDespesas"].tolist()), Decimal("0"))
     LOGGER.info("Linhas no consolidado: %d", len(final))
-    LOGGER.info("Total consolidado: R$ %s\n", format_money_br(total))
+    LOGGER.info("Total consolidado: R$ %s\n", formato_dinheiro(total))
 
     out_csv = salvar_csv_final(final)
     out_rel = salvar_relatorio_inconsistencias(rel)

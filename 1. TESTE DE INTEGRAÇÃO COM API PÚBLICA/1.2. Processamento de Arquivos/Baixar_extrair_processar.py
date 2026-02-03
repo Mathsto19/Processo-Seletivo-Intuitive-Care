@@ -15,7 +15,7 @@ from typing import Dict, Iterator, List, Optional, Tuple
 import pandas as pd
 import requests
 
-def format_money_br(v: Decimal) -> str:
+def formato_dinheiro(v: Decimal) -> str:
     v = v.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
     s = f"{v:,.2f}"              
     return s.replace(",", "X").replace(".", ",").replace("X", ".") 
@@ -149,7 +149,7 @@ def baixar_arquivo(url: str, destino: Path, timeout_s: int = 60) -> None:
             with requests.get(url, stream=True, timeout=timeout_s) as resp:
                 resp.raise_for_status()
                 with open(tmp, "wb") as f:
-                    for chunk in resp.iter_content(chunk_size=1024 * 1024):
+                    for chunk in resp.item_content(chunk_size=1024 * 1024):
                         if chunk:
                             f.write(chunk)
             tmp.replace(destino)
@@ -181,7 +181,7 @@ def extrair_zip_seguro(zip_path: Path, destino_dir: Path) -> None:
 # =========================
 # Leitura
 # =========================
-def ler_manifesto_1_1() -> Dict:
+def ler_documento() -> Dict:
     path = pasta_documentos() / MANIFEST_1_1_FILENAME
     if not path.exists():
         raise FileNotFoundError(f"Manifesto não encontrado: {path}")
@@ -190,13 +190,13 @@ def ler_manifesto_1_1() -> Dict:
         return json.load(f)
 
 
-def iter_arquivos_tabulares(root: Path) -> Iterator[Path]:
+def item_arquivos_tabulares(root: Path) -> Iterator[Path]:
     for p in root.rglob("*"):
         if p.is_file() and p.suffix.lower() in (".csv", ".txt", ".xlsx"):
             yield p
 
 
-def iter_csv_chunks(path: Path, chunksize: int) -> Iterator[pd.DataFrame]:
+def item_csv_chunks(path: Path, chunksize: int) -> Iterator[pd.DataFrame]:
     with open(path, "r", encoding="utf-8", errors="replace") as f:
         head = "".join([f.readline() for _ in range(8)])
     sep = detectar_delimitador(head)
@@ -223,7 +223,7 @@ def iter_csv_chunks(path: Path, chunksize: int) -> Iterator[pd.DataFrame]:
         )
 
 
-def iter_xlsx_frames(path: Path) -> Iterator[pd.DataFrame]:
+def item_xlsx_frames(path: Path) -> Iterator[pd.DataFrame]:
     xls = pd.ExcelFile(path, engine="openpyxl")
     for sheet in xls.sheet_names:
         df = pd.read_excel(xls, sheet_name=sheet, dtype=str, engine="openpyxl")
@@ -352,17 +352,17 @@ def processar_trimestre(
 ) -> Dict[str, Decimal]:
     total: Dict[str, Decimal] = {}
 
-    for arquivo in iter_arquivos_tabulares(extract_dir):
+    for arquivo in item_arquivos_tabulares(extract_dir):
         ext = arquivo.suffix.lower()
         try:
             if ext in (".csv", ".txt"):
-                for chunk in iter_csv_chunks(arquivo, CHUNK_SIZE_CSV):
+                for chunk in item_csv_chunks(arquivo, CHUNK_SIZE_CSV):
                     part = agregar_normalizado(chunk, tref, erros, origem=str(arquivo))
                     for k, v in part.items():
                         total[k] = total.get(k, Decimal("0")) + v
 
             elif ext == ".xlsx":
-                for frame in iter_xlsx_frames(arquivo):
+                for frame in item_xlsx_frames(arquivo):
                     part = agregar_normalizado(frame, tref, erros, origem=str(arquivo))
                     for k, v in part.items():
                         total[k] = total.get(k, Decimal("0")) + v
@@ -413,7 +413,7 @@ def main() -> None:
     pasta_normal().mkdir(parents=True, exist_ok=True)
     pasta_saida().mkdir(parents=True, exist_ok=True)
 
-    manifesto = ler_manifesto_1_1()
+    manifesto = ler_documento()
     ultimos = manifesto.get("ultimos_3_trimestres", [])
     if not ultimos:
         raise RuntimeError("Manifesto vazio.")
@@ -460,7 +460,7 @@ def main() -> None:
 
         total_valor = sum(agg.values(), Decimal("0"))
         LOGGER.info("  Operadoras agregadas: %d", len(agg))
-        LOGGER.info("  Total de despesas (Eventos/Sinistros) no trimestre: R$ %s\n", format_money_br(total_valor))
+        LOGGER.info("  Total de despesas (Eventos/Sinistros) no trimestre: R$ %s\n", formato_dinheiro(total_valor))
 
         out_csv = salvar_csv_intermediario(tref, agg)
         LOGGER.info("  Salvo: %s\n", out_csv.name)

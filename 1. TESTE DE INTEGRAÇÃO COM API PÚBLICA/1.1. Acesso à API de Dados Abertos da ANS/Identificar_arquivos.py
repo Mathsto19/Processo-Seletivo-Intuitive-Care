@@ -28,13 +28,18 @@ class TrimestreRef:
         return f"{self.trimestre}T{self.ano}"
 
 
-# Padrões de nomenclatura dos ZIPs
-_PADROES: List[re.Pattern[str]] = [
+# Padrões de nomenclatura dos ZIPs (com ano no nome)
+_PADROES_COM_ANO: List[re.Pattern[str]] = [
     re.compile(r"^(?P<t>[1-4])T(?P<a>\d{4})\.zip$", re.IGNORECASE),
     re.compile(r"^(?P<a>\d{4})_(?P<t>[1-4])_trimestre\.zip$", re.IGNORECASE),
     re.compile(r"^\d{8}_(?P<a>\d{4})_(?P<t>[1-4])_trimestre\.zip$", re.IGNORECASE),
     re.compile(r"^\d{8}_(?P<t>[1-4])T(?P<a>\d{4})\.zip$", re.IGNORECASE),
     re.compile(r"^(?P<a>\d{4})-(?P<t>[1-4])t\.zip$", re.IGNORECASE),
+]
+
+# Padrões SEM ano no nome (ano vem da pasta YYYY/)
+_PADROES_SEM_ANO: List[re.Pattern[str]] = [
+    re.compile(r"^(?P<t>[1-4])\s*[-_ ]?\s*TRIMESTRE\.zip$", re.IGNORECASE),  
 ]
 
 
@@ -90,26 +95,41 @@ def listar_itens(url_dir: str) -> Tuple[List[str], List[str]]:
     return subdirs, zips
 
 
-def extrai_trimestre(nome_zip: str) -> Optional[TrimestreRef]:
-    """Extrai (ano, trimestre) do nome do ZIP."""
+def extrai_trimestre(nome_zip: str, ano_contexto: Optional[int] = None) -> Optional[TrimestreRef]:
+    """
+    Extrai (ano, trimestre) do nome do ZIP.
+    Se o nome não tiver ano, tenta usar ano_contexto (pasta YYYY/).
+    """
     nome = Path(nome_zip).name
-    for padrao in _PADROES:
+
+    # 1) padrões com ano no nome
+    for padrao in _PADROES_COM_ANO:
         m = padrao.match(nome)
         if m:
             t = int(m.group("t"))
             a = int(m.group("a"))
             if 1 <= t <= 4:
                 return TrimestreRef(ano=a, trimestre=t)
+
+    # 2) fallback: sem ano no nome + ano da pasta
+    if ano_contexto is not None:
+        for padrao in _PADROES_SEM_ANO:
+            m2 = padrao.match(nome)
+            if m2:
+                t = int(m2.group("t"))
+                if 1 <= t <= 4:
+                    return TrimestreRef(ano=int(ano_contexto), trimestre=t)
+
     return None
 
 
 def coletar_zips_da_ans() -> Tuple[Dict[TrimestreRef, List[str]], List[str]]:
-    """Coleta todos os ZIPs do FTP da ANS."""
     agrupado: Dict[TrimestreRef, List[str]] = {}
     ignorados: List[str] = []
 
-    # ZIPs na raiz
     subdirs_base, zips_base = listar_itens(BASE_URL)
+
+    # ZIPs na raiz
     for z in zips_base:
         tref = extrai_trimestre(z)
         url_zip = f"{BASE_URL}{z}"
@@ -122,10 +142,13 @@ def coletar_zips_da_ans() -> Tuple[Dict[TrimestreRef, List[str]], List[str]]:
     for d in subdirs_base:
         if not re.fullmatch(r"\d{4}/", d):
             continue
+
+        ano_contexto = int(d.strip("/"))
         url_ano = f"{BASE_URL}{d}"
         _, zips_ano = listar_itens(url_ano)
+
         for z in zips_ano:
-            tref = extrai_trimestre(z)
+            tref = extrai_trimestre(z, ano_contexto=ano_contexto)
             url_zip = f"{url_ano}{z}"
             if tref is None:
                 ignorados.append(url_zip)
@@ -145,7 +168,6 @@ def selecionar_ultimos_3(agrupado: Dict[TrimestreRef, List[str]]) -> Dict[Trimes
 
 
 def salvar_material(ultimos: Dict[TrimestreRef, List[str]], ignorados: List[str]) -> Path:
-    """Salva JSON com os últimos 3 trimestres."""
     base = raiz_teste1()
     doc_dir = base / "Documentos"
     doc_dir.mkdir(parents=True, exist_ok=True)
@@ -162,8 +184,7 @@ def salvar_material(ultimos: Dict[TrimestreRef, List[str]], ignorados: List[str]
                 "zip_urls": sorted(urls),
             }
             for t, urls in sorted(ultimos.items())
-        ],
-        "arquivos_ignorados": sorted(ignorados),
+        ]
     }
 
     with open(out_path, "w", encoding="utf-8") as f:
@@ -179,11 +200,9 @@ def main() -> None:
     ultimos = selecionar_ultimos_3(agrupado)
 
     LOGGER.info("Total de trimestres reconhecidos: %d", len(agrupado))
-    LOGGER.info("Total de arquivos ignorados: %d", len(ignorados))
-
-    LOGGER.info("Últimos 3 trimestres:")
+    LOGGER.info("Últimos 3 trimestres identificados:")
     for t in sorted(ultimos.keys()):
-        LOGGER.info("  %s -> %d arquivo(s)", t.rotulo(), len(ultimos[t]))
+        LOGGER.info("  - Ano: %d | Trimestre: %d | Nome do Arquivo: %s", t.ano, t.trimestre, t.rotulo())
 
     out_path = salvar_material(ultimos, ignorados)
     LOGGER.info("Salvo: %s", out_path)

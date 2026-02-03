@@ -1,0 +1,11 @@
+{
+  "total_linhas": 2152,
+  "linhas_validas": 2065,
+  "linhas_invalidas": 87,
+  "taxa_rejeicao_pct": 4.04,
+  "motivos_rejeicao": {
+    "cnpj_invalido": 17,
+    "razao_social_vazia": 17,
+    "valor_invalido_ou_nao_positivo": 72
+  }
+}

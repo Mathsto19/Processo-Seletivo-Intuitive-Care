@@ -1,0 +1,253 @@
+{
+  "info": {
+    "_postman_id": "d1c7f274-e0b0-422a-944d-6a4994733059",
+    "name": "IntuitiveCare API (Teste 4 - FastAPI)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Coleção para demonstrar as rotas do backend FastAPI do Teste 4 (Operadoras + Estatísticas). Usa variáveis {{baseUrl}} e {{cnpj}}."
+  },
+  "item": [
+    {
+      "name": "Operadoras",
+      "item": [
+        {
+          "name": "Listar operadoras (paginado + busca)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/operadoras?page=1&limit=10&busca=",
+            "description": "Retorna uma lista paginada de operadoras.\nParâmetros:\n- page (int): página (1..n)\n- limit (int): itens por página\n- busca (str): termo para filtrar por Razão Social ou CNPJ (aceita pontuação)."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "try {",
+                  "  const j = pm.response.json();",
+                  "  if (j?.data?.length) {",
+                  "    const v = String(j.data[0].cnpj);",
+                  "    pm.collectionVariables.set('cnpj', v);",
+                  "    pm.environment.set('cnpj', v);",
+                  "  }",
+                  "} catch (e) {}"
+                ]
+              }
+            }
+          ],
+          "response": [
+            {
+              "name": "200 - OK (exemplo)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/operadoras?page=1&limit=10&busca="
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"cnpj\": \"27452545000195\",\n      \"razao_social\": \"2CARE OPERADORA DE SAÚDE LTDA.\",\n      \"registro_ans\": \"2018-10-09\",\n      \"modalidade\": \"Medicina de Grupo\",\n      \"uf\": \"SP\"\n    }\n  ],\n  \"total\": 724,\n  \"page\": 1,\n  \"limit\": 10,\n  \"total_pages\": 73\n}"
+            }
+          ]
+        },
+        {
+          "name": "Detalhes da operadora (por CNPJ)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/operadoras/{{cnpj}}",
+            "description": "Retorna os dados cadastrais de uma operadora, identificada pelo CNPJ (somente dígitos)."
+          },
+          "response": [
+            {
+              "name": "200 - OK (exemplo)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/operadoras/27452545000195"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"cnpj\": \"27452545000195\",\n  \"razao_social\": \"2CARE OPERADORA DE SAÚDE LTDA.\",\n  \"registro_ans\": \"2018-10-09\",\n  \"modalidade\": \"Medicina de Grupo\",\n  \"uf\": \"SP\"\n}"
+            },
+            {
+              "name": "404 - Operadora não encontrada (exemplo)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/operadoras/00000000000000"
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Operadora não encontrada\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Histórico de despesas (por CNPJ)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/operadoras/{{cnpj}}/despesas",
+            "description": "Retorna o histórico de despesas (ano/trimestre/valor) de uma operadora."
+          },
+          "response": [
+            {
+              "name": "200 - OK (exemplo)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/operadoras/27452545000195/despesas"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"ano\": 2025,\n    \"trimestre\": 1,\n    \"valor\": 61558843.68\n  },\n  {\n    \"ano\": 2025,\n    \"trimestre\": 2,\n    \"valor\": 125788780.44\n  },\n  {\n    \"ano\": 2025,\n    \"trimestre\": 3,\n    \"valor\": 189193948.95\n  }\n]"
+            },
+            {
+              "name": "404 - Operadora não encontrada (exemplo)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/operadoras/00000000000000/despesas"
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Operadora não encontrada\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Estatísticas",
+      "item": [
+        {
+          "name": "Agregados e distribuição por UF",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/estatisticas",
+            "description": "Agregados: total de despesas, média por operadora, top 5 operadoras e distribuição por UF."
+          },
+          "response": [
+            {
+              "name": "200 - OK (exemplo)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/estatisticas"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_despesas\": 1234567890.12,\n  \"media_por_operadora\": 1700000.55,\n  \"top_5_operadoras\": [\n    {\n      \"cnpj\": \"27452545000195\",\n      \"razao_social\": \"2CARE OPERADORA DE SAÚDE LTDA.\",\n      \"uf\": \"SP\",\n      \"total_despesas\": 376541573.07\n    },\n    {\n      \"cnpj\": \"15011651000154\",\n      \"razao_social\": \"BRADESCO SAÚDE - OPERADORA DE PLANOS S/A\",\n      \"uf\": \"SP\",\n      \"total_despesas\": 310000000.0\n    }\n  ],\n  \"por_uf\": [\n    {\n      \"uf\": \"SP\",\n      \"total_despesas\": 143000000000.0,\n      \"qtd_operadoras\": 200,\n      \"media_por_operadora\": 715000000.0\n    },\n    {\n      \"uf\": \"RJ\",\n      \"total_despesas\": 107000000000.0,\n      \"qtd_operadoras\": 80,\n      \"media_por_operadora\": 1337500000.0\n    },\n    {\n      \"uf\": \"OUTROS\",\n      \"total_despesas\": 20000000000.0,\n      \"qtd_operadoras\": 444,\n      \"media_por_operadora\": 45000000.0\n    }\n  ]\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000",
+      "type": "string"
+    },
+    {
+      "key": "cnpj",
+      "value": "27452545000195",
+      "type": "string"
+    }
+  ]
+}

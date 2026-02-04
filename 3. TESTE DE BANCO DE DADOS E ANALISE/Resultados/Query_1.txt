@@ -1,0 +1,9 @@
+      cnpj      |                               razao_social                                | valor_primeiro | valor_ultimo | crescimento_percentual 
+----------------+---------------------------------------------------------------------------+----------------+--------------+------------------------
+ 31763326000102 | EXCELÊNCIA PLANO DE SAÚDE S/A                                             |         225.39 |    756463.52 |              335524.26
+ 49754083000101 | EVO SAUDE ASSISTENCIA MEDICA LTDA                                         |        1940.05 |     87264.22 |                4398.04
+ 02866602000151 | SUL AMÉRICA PARANÁ CLÍNICAS SERVIÇOS DE SAÚDE S.A.                        |     1053537.38 |  26919092.09 |                2455.12
+ 40960189000189 | UNIMED PARAIBA - FEDERAÇAO DAS SOCIEDADES COOPERATIVAS DE TRABALHO MEDICO |         198.58 |      4515.65 |                2173.97
+ 51212821000122 | SAGRADA SAÚDE ASSISTÊNCIA MÉDICA LTDA                                     |        5582.14 |     84655.74 |                1416.55
+(5 rows)
+

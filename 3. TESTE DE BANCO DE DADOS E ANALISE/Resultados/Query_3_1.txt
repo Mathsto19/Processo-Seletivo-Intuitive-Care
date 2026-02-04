@@ -1,0 +1,95 @@
+      cnpj      |                                        razao_social                                         | qtd_trimestres_acima_media | total_trimestres 
+----------------+---------------------------------------------------------------------------------------------+----------------------------+------------------
+ 29309127000179 | AMIL ASSISTÊNCIA MÉDICA INTERNACIONAL S.A.                                                  |                          3 |                3
+ 92693118000160 | BRADESCO SAÚDE S.A.                                                                         |                          3 |                3
+ 62231527000184 | CAIXA BENEFICENTE DOS FUNCIONARIOS DO BANCO DO ESTADO DE SÃO PAULO                          |                          3 |                3
+ 33719485000127 | CAIXA DE ASSISTÊNCIA DOS FUNCIONÁRIOS DO BANCO DO BRASIL                                    |                          3 |                3
+ 04311093000126 | CAIXA DE ASSISTENCIA DOS SERVIDORES DO ESTADO DE MATO GROSSO DO SUL                         |                          3 |                3
+ 02725347000127 | CARE PLUS MEDICINA ASSISTENCIAL LTDA.                                                       |                          3 |                3
+ 00628107000189 | FUNDAÇÃO ASSISTENCIAL DOS SERVIDORES DO MINISTÉRIO DA FAZENDA                               |                          3 |                3
+ 62465117000106 | FUNDAÇÃO CESP                                                                               |                          3 |                3
+ 73809352000166 | FUNDAÇÃO SAÚDE ITAÚ                                                                         |                          3 |                3
+ 03658432000182 | GEAP AUTOGESTÃO EM SAÚDE                                                                    |                          3 |                3
+ 31925548000176 | GRUPO HOSPITALAR DO RIO DE JANEIRO LTDA                                                     |                          3 |                3
+ 63554067000198 | HAPVIDA ASSISTENCIA MEDICA S.A.                                                             |                          3 |                3
+ 00361325000108 | HUMANA SAÚDE NORDESTE LTDA.                                                                 |                          3 |                3
+ 62550256000120 | NOTRE DAME INTERMÉDICA MINAS GERAIS SAÚDE S.A.                                              |                          3 |                3
+ 44649812000138 | NOTRE DAME INTERMÉDICA SAÚDE S.A.                                                           |                          3 |                3
+ 44673382000190 | OMINT SERVIÇOS DE SAÚDE S.A.                                                                |                          3 |                3
+ 04540010000170 | PORTO SEGURO - SEGURO SAÚDE S/A                                                             |                          3 |                3
+ 00461479000163 | PREVENT SENIOR PRIVATE OPERADORA DE SAÚDE LTDA                                              |                          3 |                3
+ 31466949000105 | SAMEDIL SERVIÇOS DE ATENDIMENTO MÉDICO S/A                                                  |                          3 |                3
+ 43293604000186 | SANTA HELENA ASSISTÊNCIA MÉDICA S/A.                                                        |                          3 |                3
+ 01685053000156 | SUL AMERICA COMPANHIA DE SEGURO SAÚDE                                                       |                          3 |                3
+ 28630531000187 | UNIMED-SÃO GONÇALO - NITERÓI - SOC.COOP.SERV.MED E HOSP LTDA                                |                          3 |                3
+ 04201372000137 | UNIMED BELÉM COOPERATIVA DE TRABALHO MÉDICO                                                 |                          3 |                3
+ 16513178000176 | UNIMED BELO HORIZONTE COOPERATIVA DE TRABALHO MÉDICO                                        |                          3 |                3
+ 46124624000111 | UNIMED CAMPINAS - COOPERATIVA DE TRABALHO MÉDICO                                            |                          3 |                3
+ 03315918000118 | UNIMED CAMPO GRANDE MS COOPERATIVA DE TRABALHO MÉDICO                                       |                          3 |                3
+ 03533726000188 | UNIMED CUIABA COOPERATIVA DE TRABALHO MÉDICO                                                |                          3 |                3
+ 75055772000120 | UNIMED CURITIBA - SOCIEDADE COOPERATIVA DE MÉDICOS                                          |                          3 |                3
+ 05868278000107 | UNIMED DE FORTALEZA SOCIEDADE COOPERATIVA MÉDICA LTDA.                                      |                          3 |                3
+ 75222224000147 | UNIMED DE LONDRINA COOPERATIVA DE TRABALHO MÉDICO                                           |                          3 |                3
+ 58229691000180 | UNIMED DE SANTOS COOP DE TRAB MEDICO                                                        |                          3 |                3
+ 31432792000105 | UNIMED DO EST. DO RJ FEDERAÇÃO EST. DAS COOPERATIVAS MÉDICAS                                |                          3 |                3
+ 43643139000166 | UNIMED DO ESTADO DE SÃO PAULO - FEDERAÇÃO ESTADUAL DAS COOP. MÉDICAS                        |                          3 |                3
+ 02476067000122 | UNIMED GOIANIA COOPERATIVA DE TRABALHO MÉDICO                                               |                          3 |                3
+ 77858611000108 | UNIMED GRANDE FLORIANÓPOLIS-COOPERATIVA DE TRABALHO MEDICO                                  |                          3 |                3
+ 08680639000177 | UNIMED JOAO PESSOA - COOPERATIVA DE TRABALHO MÉDICO                                         |                          3 |                3
+ 12442737000143 | UNIMED MACEIO COOPERATIVA DE TRABALHO MÉDICO                                                |                          3 |                3
+ 02812468000106 | UNIMED NACIONAL - COOPERATIVA CENTRAL                                                       |                          3 |                3
+ 08380701000105 | UNIMED NATAL SOC. COOP. DE TRAB. MÉDICO                                                     |                          3 |                3
+ 87096616000196 | UNIMED PORTO ALEGRE - COOPERATIVA MÉDICA LTDA.                                              |                          3 |                3
+ 11214624000128 | UNIMED RECIFE COOPERATIVA DE TRABALHO MÉDICO                                                |                          3 |                3
+ 45100138000109 | UNIMED SAO JOSÉ DO RIO PRETO - COOP. DE TRABALHO MÉDICO                                     |                          3 |                3
+ 04487255000181 | UNIMED SEGUROS SAÚDE S/A                                                                    |                          3 |                3
+ 87827689000100 | UNIMED SERRA GAUCHA/RS COOPERATIVA DE ASSISTENCIA A SAUDE LTDA                              |                          3 |                3
+ 45399961000159 | UNIMED SOROCABA COOPERATIVA DE TRABALHO MÉDICO                                              |                          3 |                3
+ 27578434000120 | UNIMED VITORIA COOPERATIVA DE TRABALHO MEDICO                                               |                          3 |                3
+ 34266553000102 | ALICE OPERADORA LTDA.                                                                       |                          2 |                3
+ 60975174000100 | ASSOCIAÇÃO DE BENEFICÊNCIA E FILANTROPIA SÃO CRISTOVÃO                                      |                          2 |                3
+ 18321477000134 | ASSOCIAÇÃO SANTA CASA SAÚDE DE SÃO JOSÉ DOS CAMPOS                                          |                          2 |                3
+ 05814777000103 | CAIXA DE ASSISTÊNCIA DOS FUNCIONÁRIOS DO BANCO DO NORDESTE DO BRASIL                        |                          2 |                3
+ 12055813000168 | CEMIG SAÚDE                                                                                 |                          2 |                3
+ 00773639000100 | CENTRO CLÍNICO GAÚCHO LTDA                                                                  |                          2 |                3
+ 62638374000194 | CENTRO TRASMONTANO DE SAO PAULO                                                             |                          2 |                3
+ 76882612000117 | CLINIPAM CLINICA PARANAENSE DE ASSISTENCIA MEDICA LTDA                                      |                          2 |                3
+ 19878404000100 | FUNDAÇÃO SÃO FRANCISCO XAVIER                                                               |                          2 |                3
+ 95642179000197 | HUMANA SAÚDE LTDA.                                                                          |                          2 |                3
+ 03518900000113 | INSTITUTO CURITIBA DE SAÚDE                                                                 |                          2 |                3
+ 58119199000151 | ODONTOPREV S/A                                                                              |                          2 |                3
+ 39419809000198 | PASA - PLANO DE ASSISTENCIA A SAUDE DO APOSENTADO DA VALE                                   |                          2 |                3
+ 03011072000122 | PLANO HOSPITAL SAMARITANO LTDA                                                              |                          2 |                3
+ 84537141000138 | SAMEL PLANO DE SAÚDE LTDA                                                                   |                          2 |                3
+ 02403281000159 | SAMP ESPIRITO SANTO ASSISTENCIA MEDICA SA                                                   |                          2 |                3
+ 50565317000143 | SERV  SOCIAL AUTÔNOMO DE ASSIST À SAÚDE DOS SERV PÚBLICOS E MILITARES DE GOIÁS              |                          2 |                2
+ 03657699000155 | SINDIFISCO NACIONAL - SINDICATO NACIONAL DOS AUDITORES-FISCAIS DA RECEITA FEDERAL DO BRASIL |                          2 |                3
+ 87300448000109 | UNIMED - COOPERATIVA DE SERVIÇOS DE SAÚDE DOS VALES DO TAQUARI E RIO PARDO LTDA.            |                          2 |                3
+ 82624776000147 | UNIMED BLUMENAU - COOPERATIVA DE TRABALHO MEDICO                                            |                          2 |                3
+ 24449225000198 | UNIMED CARUARU-COOPERATIVA DE TRABALHO MEDICO                                               |                          2 |                3
+ 44456036000150 | UNIMED DE BAURU COOPERATIVA DE TRABALHO MÉDICO                                              |                          2 |                3
+ 81170003000175 | UNIMED DE CASCAVEL COOPERATIVA DE TRABALHO MÉDICO                                           |                          2 |                3
+ 82602327000106 | UNIMED DE JOINVILLE COOPERATIVA DE TRABALHO MÉDICO                                          |                          2 |                3
+ 35830868000101 | UNIMED DE MACAÉ COOPERATIVA DE ASSISTÊNCIA À SAÚDE                                          |                          2 |                3
+ 44803922000102 | UNIMED DE PIRACICABA SOCIEDADE COOPERATIVA DE SERVIÇOS MÉDICOS                              |                          2 |                3
+ 44863959000126 | UNIMED DE PRESIDENTE PRUDENTE COOPERATIVA DE TRAB. MÉDICO                                   |                          2 |                3
+ 45232246000127 | UNIMED DE RIBEIRAO PRETO - COOPERATIVA DE TRABALHO MÉDICO                                   |                          2 |                3
+ 35917970000130 | UNIMED DE VOLTA REDONDA COOPERATIVA DE TRABALHO MÉDICO                                      |                          2 |                3
+ 25250820000162 | UNIMED DIVINOPOLIS - COOPERATIVA DE TRABALHO MEDICO LTDA                                    |                          2 |                3
+ 76590884000143 | UNIMED DO ESTADO DE SANTA CATARINA FED. EST. DAS COOP. MÉD.                                 |                          2 |                3
+ 78339439000130 | UNIMED DO ESTADO DO PARANÁ FEDERAÇÃO ESTADUAL DAS COOPERATIVAS MÉDICAS                      |                          2 |                3
+ 17689407000170 | UNIMED JUIZ DE FORA COOPERATIVA DE TRABALHO MÉDICO LTDA                                     |                          2 |                3
+ 56727134000163 | UNIMED JUNDIAI - COOPERATIVA DE TRABALHO MÉDICO                                             |                          2 |                3
+ 85377174000120 | UNIMED LITORAL COOPERATIVA DE TRABALHO MÉDICO LTDA                                          |                          2 |                3
+ 73967085000155 | UNIMED NORTE DO MATO GROSSO COOPERATIVA DE TRABALHO MÉDICO                                  |                          2 |                3
+ 29135795000127 | UNIMED NOVA FRIBURGO-SOC.COOP.SERV.MED.HOSP.LTDA.                                           |                          2 |                3
+ 76767219000182 | UNIMED REGIONAL MARINGÁ COOP.DE TRABALHO MÉDICO                                             |                          2 |                3
+ 45359213000142 | UNIMED SÃO CARLOS - COOPERATIVA DE TRABALHO MÉDICO                                          |                          2 |                3
+ 60214517000105 | UNIMED SAO JOSE DOS CAMPOS - COOPERATIVA DE TRABALHO MEDICO                                 |                          2 |                3
+ 13360276000122 | UNIMED SERGIPE - COOPERATIVA DE TRABALHO MÉDICO                                             |                          2 |                3
+ 32440968000125 | UNIMED SUL CAPIXABA COOPERATIVA DE TRABALHO MÉDICO                                          |                          2 |                3
+ 07241136000132 | UNIMED TERESINA - COOPERATIVA DE TRABALHO MÉDICO                                            |                          2 |                3
+ 17790718000121 | UNIMED UBERLÂNDIA COOPERATIVA REGIONAL TRABALHO MÉDICO LTDA                                 |                          2 |                3
+ 88258884000120 | UNIMED VALE DO SINOS - COOPERATIVA DE ASSISTÊNCIA À SAÚDE LTDA                              |                          2 |                3
+(91 rows)
+

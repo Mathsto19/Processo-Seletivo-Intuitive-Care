@@ -1,0 +1,5 @@
+ qtd_operadoras_acima_media_em_2_ou_mais_trimestres 
+----------------------------------------------------
+                                                 90
+(1 row)
+
